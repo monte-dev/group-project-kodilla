@@ -1,0 +1,142 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  border: 1px solid $form-border-color;
+  display: inline-flex;
+  height: 45px;
+  color: $text-color;
+
+  .category {
+    border-right: 1px solid $form-border-color;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 250px;
+
+    .icon:first-child {
+      color: $primary;
+      position: absolute;
+      left: 10px;
+      z-index: 2;
+    }
+
+    .icon:last-child {
+      position: absolute;
+      right: 10px;
+      z-index: 2;
+    }
+
+    .visibleList {
+      -webkit-appearance: none;
+      background-color: $light;
+      padding: 0 0 0 10px;
+      position: absolute;
+      z-index: 1;
+      list-style: none;
+      transform: translatey(-4px);
+    }
+
+    .hiddenList {
+      display: none;
+      list-style: none;
+      transform: translateX(-38px);
+    }
+  }
+
+  .category:hover {
+    background-color: $light;
+
+    .visibleList {
+      width: 251px;
+      padding: 0 0 10px 41px;
+      margin-left: -41px;
+      z-index: 1;
+      border-radius: 20%;
+
+      .hiddenList {
+        display: block;
+        z-index: 1;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  .hiddenCategory {
+    display: none;
+    list-style: disc;
+    padding-right: 20px;
+  }
+
+  .visibleCategory:hover .hiddenCategory {
+    display: block;
+  }
+}
+
+.hide:hover {
+  color: $primary;
+}
+
+.visibleCategory:hover {
+  color: $primary;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  input {
+    border: 0;
+    padding-left: 10px;
+    font-size: 14px;
+    outline: none;
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+  }
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocompleteItems {
+  position: absolute;
+  border: 1px solid $medium-gray;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocompleteItems div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: $white;
+  border-bottom: 1px solid $medium-gray;
+}
+
+.autocompleteItems div:hover {
+  background-color: $hover-gray;
+}
+
+@media (max-width: 465px) {
+  .root {
+    flex-direction: column;
+    height: auto;
+
+    .category {
+      border-right: none;
+    }
+  }
+}

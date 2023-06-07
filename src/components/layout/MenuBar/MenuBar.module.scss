@@ -1,0 +1,95 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  box-shadow: 2px 3.464px 6px rgba(1, 2, 2, 0.2);
+  background-color: $light;
+
+  :global(.container) > :global(.row) {
+    height: 84px;
+  }
+ 
+  .menu {
+    display: flex;
+    align-self: stretch;
+    
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+      }
+    }
+
+    a {
+      color: $text-color;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      border-top: 4px solid $light;
+      font-weight: 500;
+      letter-spacing: 1px;
+
+      &:hover,
+      &.active {
+        background-color: $primary;
+        color: $light;
+        border-color: $primary;
+        @extend %hoverEffect;
+        
+      }
+
+      &.disabled:hover {
+        background-color: $light-gray;
+        cursor: not-allowed;
+        color: $black;
+        border-color: none;
+      }
+
+      &.active {
+        border-color: $text-color;
+      }
+
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 996px) {
+  .root {
+    height: 120px;
+  }
+}
+
+@media (max-width: 575px){
+  .root {
+    .menu {
+      width: 15%;
+    }
+    .productSearch {
+      width: 85%;
+    } 
+    .button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .icon:hover {
+      color: $primary;
+    }
+  }
+  
+  .navbarMenu {
+    position:absolute;
+    width: 100vw;
+    left: -570%;
+    top: 100%;
+  }
+  .navigation {
+    border-bottom: 4px solid $black;
+  }  
+}

@@ -1,0 +1,137 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  background-color: $header-bg;
+  
+  :global(.container) > :global(.row) {
+    height: 145px;
+  }
+
+  .gridContainer {
+    align-items: center;
+  }
+
+  .phoneNumber {
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 34px;
+      color: rgb(216, 216, 216);
+      font-weight: 500;
+      text-align: left;
+
+      .icon {
+        font-size: 32px;
+        color: $primary;
+        vertical-align: middle;
+        margin-top: -3px;
+        margin-right: 0.8rem;
+      }
+    }
+  }
+
+  .cart {
+    text-align: right;
+
+    .cartBox {
+      display: inline-block;
+      position: relative;
+      color: $light;
+
+      .cartIcon {
+        background-color: $primary;
+        width: 55px;
+        height: 50px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+
+        .icon {
+          margin-right: 5px;
+        }
+      }
+
+      .cartCounter {
+        min-width: 28px;
+        height: 27px;
+        border-radius: 14px;
+        background-color: $header-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: rgb(224, 227, 237);
+        position: absolute;
+        top: 50%;
+        right: -5%;
+        transform: translate(50%, -50%);
+        padding: 4px;
+      }
+
+      &:hover {
+        .cartIcon {
+          background-color: lighten($primary, 10%);
+          @extend %hoverEffect;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root {
+    .gridContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "logo cart cart"
+        "logo phone phone"
+        ". . .";
+      align-items: flex-start;
+      padding-top: $base-padding;
+    }
+
+    .phoneNumber {
+      grid-area: phone;
+
+      p {
+        font-size: 14px;
+        text-align: right;
+      }
+    }
+
+    .logo {
+      grid-area: logo;
+    }
+
+    .cart {
+      grid-area: cart;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .root {
+    .gridContainer {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "logo cart"
+        "logo phone"
+        ". .";
+      padding-top: calc($base-padding / 2);
+
+      .logo {
+        img {
+          width: 125px;
+        }
+      }
+
+      .phoneNumber p {
+        text-align: right;
+      }
+    }
+  }
+}

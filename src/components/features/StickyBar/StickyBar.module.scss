@@ -1,0 +1,41 @@
+@import "../../../styles/settings.scss";
+
+.compared {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 1px solid $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.buttonRemove {
+  color: $text-color-light;
+  font-size: 25px;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.compared:hover .buttonRemove {
+  visibility: visible;
+  background-color: $form-border-color;
+  opacity: 0.5;
+}
+

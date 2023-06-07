@@ -1,0 +1,40 @@
+@import "../../../styles/settings.scss";
+
+.main {
+  background-color: $text-color;
+  color: $light;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 10px 30px;
+
+  &:not(.noHover):hover {
+    color: $light !important;
+    background-color: $primary;
+    text-decoration: none;
+    @extend %hoverEffect;
+  }
+}
+
+.small {
+  @extend .main;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 5px 10px;
+  font-weight: 400;
+}
+
+.outline {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $text-color;
+  color: $text-color;
+  font-size: 13px;
+  line-height: 22px;
+
+  &:not(.noHover):hover {
+    background-color: $text-color;
+    color: $light;
+    @extend %hoverEffect;
+  }
+}

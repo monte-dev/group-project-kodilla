@@ -1,0 +1,51 @@
+@import "../../../styles/settings.scss";
+
+.myRating {
+  color: $primary;
+}
+
+.rating {
+  display: inline-block;
+  display: inline;
+}
+
+.rating:hover > span {
+  cursor: pointer;
+  color: $primary;
+
+  .mySetRating {
+    display: inline-block;
+  }
+
+  .standardRating {
+    display: none;
+  }
+}
+.rating > span:hover ~ span {
+  cursor: pointer;
+  color: $black;
+
+  .setStandardRating {
+    display: inline-block;
+  }
+
+  .myStandardRating {
+    display: none;
+  }
+
+  .mySetRating {
+    display: none;
+  }
+  
+  .standardRating {
+    display: inline-block;
+  }
+}
+
+.mySetRating {
+  display: none;
+}
+
+.setStandardRating {
+  display: none;
+}

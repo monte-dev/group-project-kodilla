@@ -1,0 +1,88 @@
+@import "../../../styles/settings.scss";
+
+.cartContainer {
+  position: absolute;
+  right: 2%;
+  background-color: $light;
+  width: 350px;
+  height: auto;
+  text-align: center;
+  z-index: 3;
+  border: 2px solid $primary;
+  margin-top: 10px;
+
+  .cartTitle {
+    text-transform: uppercase;
+    margin: 20px;
+    position: relative;
+  }
+  .cartTitle::after {
+    position: absolute;
+    content: "";
+    background-color: $primary;
+    width: 348px;
+    height: 10px;
+    transform: translate(-66%, 300%);
+    opacity: 0.7;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    .button {
+      text-decoration: none;
+    }
+  }
+
+  .productsList {
+    padding: 0;
+    margin: 20px;
+  }
+
+  .cartProducts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .product {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+
+    span {
+      text-transform: lowercase;
+    }
+  }
+
+  .delivery, .summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    
+  }
+  .delivery::before, .summary::before {
+    position: absolute;
+    content: "";
+    background-color: $primary;
+    width: 348px;
+    height: 10px;
+    transform: translate(-6%, -260%);
+    opacity: 0.7;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    .button {
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "../../../styles/settings.scss";
+
+.brands {
+    height: 110px;
+    padding: $base-padding 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $light-gray;
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: $base-padding;
+
+    .brandsBtn {
+        background: $light-black;
+        color: $light-gray;
+        border: none;
+
+        :hover {
+            color: $dark-orange;
+            @extend %hoverEffect;
+        }
+    }
+
+    .brandsBtn:first-of-type {
+        margin-right: calc($base-padding / 2);
+    }
+
+    .brandsBtn:last-of-type {
+        margin-left: calc($base-padding / 2);
+    }
+
+    .brandsWrapper {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
+        overflow: hidden;
+        width: fit-content;
+
+        .brand {
+            list-style-type: none;
+            margin: 0 calc($base-padding / 2);
+            border: 1px solid $light-gray;
+            width: 125px;
+        }
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            padding: calc($base-padding / 2);
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .brands {
+        .brandsWrapper {
+            justify-content: space-around;
+
+            li {
+                margin: 0 $base-padding;
+            }
+            img {
+                padding: calc($base-padding / 4);
+            }
+        }
+    }
+}
